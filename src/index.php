@@ -26,7 +26,7 @@
         <div class="col-9">
             <div class="d-flex justify-content-between w-100">
                 <h2>Liste des billets</h2>
-                <a type="button" class="btn btn-primary" href="#">Ajouter un billet</a>
+                <a type="button" class="btn btn-primary" href="./new-post.php">Ajouter un billet</a>
             </div>
             <div class="filters mb-5 mt-3">
                 <form id="filterForm">
