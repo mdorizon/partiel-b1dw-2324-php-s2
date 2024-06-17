@@ -55,6 +55,7 @@
                             <div>
                                 <a type="button" class="btn btn-primary" href="./single-post.php?post_id=<?= $post['id'] ?>">Voir le billet</a>
                             </div>
+                            <a href="./scripts/post-delete.php?id=<?= $post['id'] ?>">supprimer le billet</a>
                         </div>
                     </div>
                 <?php endforeach; ?>
