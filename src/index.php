@@ -31,7 +31,7 @@
                         <div class="card-body d-flex flex-column align-items-end">
                             <h5 class="card-subtitle mb-2 text-muted"><?= $post['prix'] ?>€</h5>
                             <div>
-                                <button type="button" class="btn btn-primary ">Voir le billet</button>
+                                <a type="button" class="btn btn-primary" href="./single-post.php?post_id=<?= $post['id'] ?>">Voir le billet</a>
                             </div>
                         </div>
                     </div>
