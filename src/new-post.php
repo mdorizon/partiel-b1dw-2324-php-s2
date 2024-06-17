@@ -7,15 +7,15 @@
         <div class="mb-3">
             <select class="form-select mb-2" name="categorie" required>
                 <option selected>Catégorie</option>
-                <option value="hommes">Hommes</option>
-                <option value="femmes">Femmes</option>
+                <option value="Hommes">Hommes</option>
+                <option value="Femmes">Femmes</option>
             </select>
             <input class="form-control mb-2" type="text" name="groupe" placeholder="Groupe" required>
             <input class="form-control mb-2" type="text" name="equipe1" placeholder="Équipe 1" required>
             <input class="form-control mb-2" type="text" name="equipe2" placeholder="Équipe 2" required>
             <input class="form-control mb-2" type="datetime-local" name="date_heure" required>
             <input class="form-control mb-2" type="text" name="lieu" placeholder="Lieu" required>
-            <input class="form-control mb-2" type="number" name="prix" placeholder="prix" required>
+            <input class="form-control mb-2" type="number" step="0.01" name="prix" placeholder="prix" required>
             <input class="form-control mb-2" type="text" name="description" placeholder="Description" required>
         </div>
 
