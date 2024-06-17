@@ -1,9 +1,21 @@
 <?php require_once 'parts/header.php'; ?>
-<?php 
+<?php
+    $filter = $_GET['filter'] ?? 'DESC';
+    switch ($filter) {
+        case 'desc':
+            $filterchoice = "DESC";
+            break;
+        case 'asc':
+            $filterchoice = "ASC";
+            break;
+        default:
+            $filterchoice = "DESC";
+            break;
+    }
     // connect to db
     $connectDatabase = new PDO("mysql:host=db;dbname=wordpress", "root", "admin");
     // prepare request
-    $request = $connectDatabase->prepare("SELECT * FROM post");
+    $request = $connectDatabase->prepare("SELECT * FROM post ORDER BY prix {$filterchoice}");
     // execute request
     $request->execute();
     // fetch all data from table posts
@@ -16,7 +28,17 @@
                 <h2>Liste des billets</h2>
                 <a type="button" class="btn btn-primary" href="#">Ajouter un billet</a>
             </div>
-            <p>filtres</p>
+            <div class="filters mb-5 mt-3">
+                <form id="filterForm">
+                    <select name="filter" class="form-select" onchange="submitForm()">
+                        <option value="desc" <?= $filter == 'desc' ? "selected" : "" ?>>Plus chers</option>
+                        <option value="asc" <?= $filter == 'asc' ? "selected" : "" ?>>Moins chers</option>
+                    </select>
+                </form>
+                <script>
+                    function submitForm() { document.getElementById('filterForm').submit(); }
+                </script>
+            </div>
             <div class="feedback-list d-flex gap-4 mb-5 flex-wrap w-100">
                 <?php foreach($posts as $post): ?>
                     <div class="card d-flex flex-row w-100">
